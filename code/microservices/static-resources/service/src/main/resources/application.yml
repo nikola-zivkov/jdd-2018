@@ -1,0 +1,17 @@
+#
+# Copyright (c) 2018 Seavus. All Rights Reserved.
+#
+# Use of this source code is governed by an MIT license, included in 'LICENSE.Seavus'.
+#
+
+spring:
+  application:
+    name: static-resources
+
+server:
+  port: 8084
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}

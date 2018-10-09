@@ -1,0 +1,37 @@
+#
+# Copyright (c) 2018 Seavus. All Rights Reserved.
+#
+# Use of this source code is governed by an MIT license, included in 'LICENSE.Seavus'.
+#
+
+spring:
+  application:
+      name: api-gateway-zuul
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+
+zuul:
+  routes:
+    book-catalog:
+      path: /book-catalog/**
+      stripPrefix: false
+    rating:
+      path: /rating/**
+      stripPrefix: false
+    recommendation:
+      path: /recommendation/**
+      stripPrefix: false
+    poster:
+      path: /poster/**
+      serviceId: static-resources
+      stripPrefix: false
+    service-rating:
+      path: /_service/rating/**
+      serviceId: rating
+      stripPrefix: true

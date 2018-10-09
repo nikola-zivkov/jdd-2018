@@ -1,0 +1,16 @@
+#
+# Copyright (c) 2018 Seavus. All Rights Reserved.
+#
+# Use of this source code is governed by an MIT license, included in 'LICENSE.Seavus'.
+#
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    response-cache-update-interval-ms: 500
+    eviction-interval-timer-in-ms: 500
